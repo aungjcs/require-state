@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-controller="HeadCtrl" ng-init="init();">
+<head>
+    <title>my-require</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    <link href="/css/index.css" rel="stylesheet">
+    <script type="text/javascript" data-main="/js/main.js" src="/lib/require.js"></script>
+</head>
+
+<body>
+<div class="container text-center not-ready">
+    <h3> Open your browser's debugger tools. </h3>
+    {{1+main}}<br>
+    <a href="#/list">list</a>
+    <a href="#/detail">detail</a>
+    <a href="#/requireDetail">requireDetail</a>
+    <div ui-view></div>
+</div>
+
+<!-- list -->
+<script type="text/ng-template" id="partials/list.html">
+    <h3>{{stateName}}</h3>
+    <div ui-view></div>
+</script>
+
+<script type="text/ng-template" id="partials/detail.html">
+    <h3>{{stateName}}</h3>
+    <div ui-view></div>
+</script>
+</body>
+</html>
